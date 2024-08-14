@@ -1,3 +1,5 @@
+// File: moa.go
+
 package gollm
 
 import (
@@ -8,9 +10,8 @@ import (
 
 // MOAConfig represents the configuration for the Mixture of Agents
 type MOAConfig struct {
-	Layers     int
-	Models     int
 	Iterations int
+	Models     [][]ConfigOption // Each inner slice represents a model's configuration
 }
 
 // MOALayer represents a single layer in the Mixture of Agents
@@ -20,32 +21,29 @@ type MOALayer struct {
 
 // MOA represents the Mixture of Agents
 type MOA struct {
-	Config    MOAConfig
-	Layers    []MOALayer
+	Config     MOAConfig
+	Layers     []MOALayer
 	Aggregator LLM
 }
 
 // NewMOA creates a new Mixture of Agents instance
-func NewMOA(config MOAConfig, modelConfigs [][]ConfigOption, aggregatorConfig []ConfigOption) (*MOA, error) {
-	if len(modelConfigs) != config.Layers || len(modelConfigs[0]) != config.Models {
-		return nil, fmt.Errorf("invalid model configuration: expected %d layers with %d models each", config.Layers, config.Models)
+func NewMOA(config MOAConfig, aggregatorConfig []ConfigOption) (*MOA, error) {
+	if len(config.Models) == 0 {
+		return nil, fmt.Errorf("invalid model configuration: at least one model must be specified")
 	}
 
 	moa := &MOA{
 		Config: config,
-		Layers: make([]MOALayer, config.Layers),
+		Layers: make([]MOALayer, len(config.Models)),
 	}
 
-	for i := 0; i < config.Layers; i++ {
-		moa.Layers[i] = MOALayer{
-			Models: make([]LLM, config.Models),
+	for i, modelConfig := range config.Models {
+		llm, err := NewLLM(modelConfig...)
+		if err != nil {
+			return nil, fmt.Errorf("failed to create LLM for model %d: %w", i, err)
 		}
-		for j := 0; j < config.Models; j++ {
-			llm, err := NewLLM([]ConfigOption{modelConfigs[i][j]}...)
-			if err != nil {
-				return nil, fmt.Errorf("failed to create LLM for layer %d, model %d: %w", i, j, err)
-			}
-			moa.Layers[i].Models[j] = llm
+		moa.Layers[i] = MOALayer{
+			Models: []LLM{llm},
 		}
 	}
 
