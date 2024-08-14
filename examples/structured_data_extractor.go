@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/teilomillet/gollm"
+	"github.com/sammcj/gollm"
 )
 
 // MovieReview without validation tags
@@ -69,9 +69,9 @@ func main() {
 		log.Fatalf("Failed to create LLM: %v", err)
 	}
 
-	text := `I recently watched "Inception" directed by Christopher Nolan. This mind-bending sci-fi thriller from 2010 
-	         keeps you on the edge of your seat. With its intricate plot and stunning visuals, I'd rate it 9.5 out of 10. 
-	         It seamlessly blends elements of science fiction, action, and psychological drama. The movie explores the concept 
+	text := `I recently watched "Inception" directed by Christopher Nolan. This mind-bending sci-fi thriller from 2010
+	         keeps you on the edge of your seat. With its intricate plot and stunning visuals, I'd rate it 9.5 out of 10.
+	         It seamlessly blends elements of science fiction, action, and psychological drama. The movie explores the concept
 	         of dream infiltration and leaves you questioning reality long after the credits roll.`
 
 	ctx := context.Background()

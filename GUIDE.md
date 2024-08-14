@@ -8,12 +8,12 @@ This guide provides best practices and recommendations for using the `gollm` pac
 
 1. Install the package:
    ```
-   go get github.com/teilomillet/gollm
+   go get github.com/sammcj/gollm
    ```
 
 2. Import the package in your Go code:
    ```go
-   import "github.com/teilomillet/gollm"
+   import "github.com/sammcj/gollm"
    ```
 
 ## Configuration Management

@@ -63,7 +63,7 @@ Your gollm-powered golems can handle a wide range of AI-powered tasks, including
 ## Installation
 
 ```bash
-go get github.com/teilomillet/gollm
+go get github.com/sammcj/gollm
 ```
 
 ## Quick Start
@@ -78,7 +78,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/teilomillet/gollm"
+	"github.com/sammcj/gollm"
 )
 
 func main() {
@@ -482,7 +482,7 @@ By following these best practices, you can make the most effective use of the go
 
 ## Examples and Tutorials
 
-Check out our [examples directory](https://github.com/teilomillet/gollm/tree/main/examples) for more usage examples, including:
+Check out our [examples directory](https://github.com/sammcj/gollm/tree/main/examples) for more usage examples, including:
 
 - Basic usage
 - Different prompt types

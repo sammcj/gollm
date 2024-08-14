@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/invopop/jsonschema"
-	"github.com/teilomillet/gollm/internal/llm"
+	"github.com/sammcj/gollm/internal/llm"
 )
 
 // Prompt represents a structured prompt for an LLM

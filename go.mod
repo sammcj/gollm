@@ -1,4 +1,4 @@
-module github.com/teilomillet/gollm
+module github.com/sammcj/gollm
 
 go 1.22.5
 
@@ -7,6 +7,7 @@ require (
 	github.com/go-playground/validator/v10 v10.22.0
 	github.com/invopop/jsonschema v0.12.0
 	github.com/pkoukk/tiktoken-go v0.1.7
+	github.com/teilomillet/gollm v0.0.93
 )
 
 require (
@@ -19,7 +20,6 @@ require (
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/stretchr/testify v1.9.0 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect
 	golang.org/x/crypto v0.19.0 // indirect
 	golang.org/x/net v0.21.0 // indirect

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/teilomillet/gollm"
+	"github.com/sammcj/gollm"
 )
 
 func main() {
@@ -20,9 +20,9 @@ func main() {
 	ctx := context.Background()
 
 	question := "What are the main challenges in quantum computing?"
-	contextInfo := `Quantum computing is an emerging field that uses quantum-mechanical phenomena such as 
-	superposition and entanglement to perform computation. It has the potential to solve certain problems 
-	much faster than classical computers, particularly in areas like cryptography, optimization, and 
+	contextInfo := `Quantum computing is an emerging field that uses quantum-mechanical phenomena such as
+	superposition and entanglement to perform computation. It has the potential to solve certain problems
+	much faster than classical computers, particularly in areas like cryptography, optimization, and
 	simulation of quantum systems.`
 
 	response, err := gollm.QuestionAnswer(ctx, llmClient, question,

@@ -10,7 +10,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/teilomillet/gollm"
+	"github.com/sammcj/gollm"
 )
 
 // AnalysisResult represents the structured output of our analysis
