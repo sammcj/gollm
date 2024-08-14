@@ -376,7 +376,7 @@ fmt.Printf("Response 2: %s\n", response2)
 
 ## Best Practices
 
-1. **Prompt Engineering**: 
+1. **Prompt Engineering**:
    - Use the `NewPrompt()` function with options like `WithContext()`, `WithDirectives()`, and `WithOutput()` to create well-structured prompts.
    - Example:
      ```go
@@ -479,6 +479,7 @@ fmt.Printf("Response 2: %s\n", response2)
       ```
 
 By following these best practices, you can make the most effective use of the gollm package, creating more robust, efficient, and maintainable AI-powered applications.
+
 ## Examples and Tutorials
 
 Check out our [examples directory](https://github.com/teilomillet/gollm/tree/main/examples) for more usage examples, including:
@@ -489,6 +490,7 @@ Check out our [examples directory](https://github.com/teilomillet/gollm/tree/mai
 - Advanced prompt templates
 - Prompt optimization
 - JSON output validation
+- Mixture of Agents
 
 ## Project Status
 
